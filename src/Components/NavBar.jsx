@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 const NavBar = ({ cartItems }) => {
   const location = useLocation();
   return (
-    <div className="bg-[#F56E0F] sticky top-0 z-10">
+    <div className="bg-[#FF4F18] sticky top-0 z-10">
       <div className="max-w-[1440px] mx-auto p-4 flex justify-between items-center ">
         <div className="flex gap-2 items-center">
           <img

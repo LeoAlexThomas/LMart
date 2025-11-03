@@ -24,7 +24,7 @@ const Home = ({ cartItems, onCartButtonClicked }) => {
   if (isLoading) {
     return (
       <div className="flex flex-col gap-6 justify-center items-center h-screen">
-        <i className="fa-solid fa-spinner fa-spin-pulse text-[#f56e0f] fa-2xl"></i>
+        <i className="fa-solid fa-spinner fa-spin-pulse text-[#FF4F18] fa-2xl"></i>
         <p className="text-lg font-medium text-center text-[#FBFBFB]">
           Loading
         </p>
@@ -34,10 +34,10 @@ const Home = ({ cartItems, onCartButtonClicked }) => {
 
   return (
     <div className="max-w-[1440px] mx-auto px-4 my-4">
-      <h2 className="text-3xl font-bold text-[#FBFBFB]">Products</h2>
+      <h2 className="text-3xl font-bold text-[#151419]">Products</h2>
       {item === null || item.length === 0 ? (
         <div className="flex justify-center p-4 items-center flex-col h-screen">
-          <HiOutlineEmojiSad className="w-8 h-8 text-[#F56E0F] " />
+          <HiOutlineEmojiSad className="w-8 h-8 text-[#FF4F18] " />
           <p className="text-lg text-center text-[#FBFBFB]">
             Products not found
           </p>

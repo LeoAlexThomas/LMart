@@ -18,7 +18,6 @@ const Cart = ({
 
   const handleDecrementCart = (product) => {
     const itemCount = cartItemsCount[product.id];
-    console.log(itemCount);
     if (itemCount <= 1) {
       return;
     }
@@ -38,13 +37,13 @@ const Cart = ({
 
   return (
     <div className="px-4 my-4 max-w-[1440px] mx-auto">
-      <h2 className="text-3xl font-bold text-[#FBFBFB]">Cart</h2>
+      <h2 className="text-3xl font-bold text-[#141517]">Cart</h2>
       <div className="flex gap-4 flex-col lg:flex-row">
-        <div className="w-full flex bg-[#262626] rounded-lg p-4 mt-3">
+        <div className="w-full flex  rounded-lg  mt-3">
           {cartItems.length === 0 ? (
-            <div className="w-full h-full flex gap-4 flex-col justify-center items-center ">
-              <FaCartPlus className="w-10 h-10 text-[#F56E0F]" />
-              <p className="text-xl font-bold text-[#FBFBFB]">
+            <div className="w-full h-full flex bg-[#F2F4F7] gap-4 flex-col justify-center items-center rounded-md">
+              <FaCartPlus className="w-10 h-10 text-[#FF4F18]" />
+              <p className="text-xl font-bold text-[#141519]">
                 Please add product to cart
               </p>
             </div>
@@ -67,8 +66,8 @@ const Cart = ({
           )}
         </div>
         {cartItems.length > 0 && (
-          <div className="flex gap-2 flex-col rounded-lg p-4 mt-3 bg-[#878787] w-full max-w-full lg:max-w-sm sticky md:relative bottom-4 md:bottom-0 h-fit">
-            <h4 className="text-xl font-bold text-[#FBFBFB]">
+          <div className="flex gap-2 flex-col rounded-lg p-4 mt-3 bg-white border-2 border-[#F2F4F7] w-full max-w-full lg:max-w-sm sticky md:relative bottom-4 md:bottom-0 h-fit">
+            <h4 className="text-xl font-bold text-[#141517]">
               Estimated Total
             </h4>
             <ItemViewer label="Total Price:" value={`$${getTotal()}`} />
@@ -88,8 +87,8 @@ const Cart = ({
 const ItemViewer = ({ label, value }) => {
   return (
     <div className="flex gap-2 justify-between items-center">
-      <p className="text-base font-medium text-[#FBFBFB]">{label}</p>
-      <p className="text-base text-[#FBFBFB]">{value}</p>
+      <p className="text-base font-medium text-[#141519]">{label}</p>
+      <p className="text-base text-[#141519]">{value}</p>
     </div>
   );
 };

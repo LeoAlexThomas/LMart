@@ -39,7 +39,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-[#151419] h-screen overflow-y-auto">
+    <div className="bg-white h-screen overflow-y-auto select-none">
       {/* NOTE: Success Message Toast */}
       {isModalOpen && (
         <CustomToast

@@ -3,9 +3,9 @@ import { FaRegCopyright } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="flex justify-center items-center gap-2 px-4 py-2 bg-[#1B1B1E] mt-4">
-      <FaRegCopyright className="text-[#F56E0F]" />
-      <p className="text-base font-medium text-center text-[#F56E0F]">
+    <div className="flex justify-center items-center gap-2 px-4 py-2 bg-[#F2F4F7] mt-4">
+      <FaRegCopyright className="text-[#FF4F18]" />
+      <p className="text-base font-medium text-center text-[#FF4F18]">
         Copyright 2025, Leo Alex Thomas
       </p>
     </div>
