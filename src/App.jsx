@@ -5,6 +5,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
 import CustomToast from "./Components/CustomToast";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   // Toast State
@@ -72,6 +73,8 @@ const App = () => {
               />
             }
           />
+          {/* Nomatch page routing */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Footer Section */}
         <Footer />
