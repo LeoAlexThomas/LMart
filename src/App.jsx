@@ -12,6 +12,7 @@ const App = () => {
 
   // Cart Item State
   const [cartItems, setCartItems] = useState([]);
+  const [cartItemsCount, setCartItemsCount] = useState({});
 
   // Modal State Changers
   const handleModelOpen = () => setIsModalOpen(true);
@@ -19,10 +20,16 @@ const App = () => {
 
   const handleCartButtonClicked = (item) => {
     if (cartItems.includes(item)) {
+      // Removing item from cart [product card button]
       handleRemoveFromCartClicked(item);
       return;
     }
+    // Adding Item to cart
     setCartItems((prev) => [...prev, item]);
+    // Adding Item count to cart item
+    setCartItemsCount((prev) => ({ ...prev, [item.id]: 1 }));
+
+    // Opening toast model message
     handleModelOpen();
   };
 
@@ -32,6 +39,7 @@ const App = () => {
 
   return (
     <div className="bg-[#151419] h-screen overflow-y-auto">
+      {/* NOTE: Success Message Toast */}
       {isModalOpen && (
         <CustomToast
           toastId="successMessage"
@@ -41,6 +49,7 @@ const App = () => {
         />
       )}
       <BrowserRouter>
+        {/* Header */}
         <NavBar cartItems={cartItems} />
         <Routes>
           <Route
@@ -57,11 +66,14 @@ const App = () => {
             element={
               <Cart
                 cartItems={cartItems}
+                cartItemsCount={cartItemsCount}
+                setCartItemsCount={setCartItemsCount}
                 onRemoveFromCartClicked={handleRemoveFromCartClicked}
               />
             }
           />
         </Routes>
+        {/* Footer Section */}
         <Footer />
       </BrowserRouter>
     </div>

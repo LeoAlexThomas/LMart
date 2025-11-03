@@ -2,15 +2,12 @@ import { Fragment, useEffect, useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import CartCard from "../Components/CartCard";
 
-const Cart = ({ cartItems, onRemoveFromCartClicked }) => {
-  const [cartItemsCount, setCartItemsCount] = useState({});
-
-  useEffect(() => {
-    cartItems.map((ele) => {
-      setCartItemsCount((prev) => ({ ...prev, [ele.id]: 1 }));
-    });
-  }, [cartItems]);
-
+const Cart = ({
+  cartItems,
+  cartItemsCount,
+  setCartItemsCount,
+  onRemoveFromCartClicked,
+}) => {
   const handleIncrementCart = (product) => {
     const itemCount = cartItemsCount[product.id];
     setCartItemsCount((prev) => ({
