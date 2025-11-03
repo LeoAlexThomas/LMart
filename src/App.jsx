@@ -4,9 +4,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
+import CustomToast from "./Components/CustomToast";
 
 const App = () => {
+  // Toast State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Cart Item State
   const [cartItems, setCartItems] = useState([]);
+
+  // Modal State Changers
+  const handleModelOpen = () => setIsModalOpen(true);
+  const handleModelClose = () => setIsModalOpen(false);
 
   const handleCartButtonClicked = (item) => {
     if (cartItems.includes(item)) {
@@ -14,6 +23,7 @@ const App = () => {
       return;
     }
     setCartItems((prev) => [...prev, item]);
+    handleModelOpen();
   };
 
   const handleRemoveFromCartClicked = (item) => {
@@ -22,6 +32,14 @@ const App = () => {
 
   return (
     <div className="bg-[#151419] h-screen overflow-y-auto">
+      {isModalOpen && (
+        <CustomToast
+          toastId="successMessage"
+          message="Added Successfully to cart"
+          onToastClose={handleModelClose}
+          isWarningToast={false}
+        />
+      )}
       <BrowserRouter>
         <NavBar cartItems={cartItems} />
         <Routes>
